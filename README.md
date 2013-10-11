@@ -11,26 +11,26 @@ This package use Redis as storage to store counter values.
 Usage
 -----
 
-    ```python
-    import pyramid_antiflood
+```python
+import pyramid_antiflood
 
-    antiflood = pyramid_antiflood(action_id, item_id)
+antiflood = pyramid_antiflood(action_id, item_id)
 
-    try:
-        antiflood.verify()
+try:
+    antiflood.verify()
 
-        action_occured = is_action_occured()
+    action_occured = is_action_occured()
 
-        if action_occured:
-            antiflood.increase()
-        else:
-            antiflood.clear()
+    if action_occured:
+        antiflood.increase()
+    else:
+        antiflood.clear()
 
-    except pyramid_antiflood.LimitionReachedError, e:
-        # TODO process on limition is reached
-        print e
-        pass
-    ```
+except pyramid_antiflood.LimitionReachedError, e:
+    # TODO process on limition is reached
+    print e
+    pass
+```
 
 Configuration
 -------------
